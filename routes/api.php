@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Type;
 use App\Models\User;
 use App\Models\Project;
+use App\Models\Skill;
+use App\Models\Education;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,20 @@ Route::get('/types', function(){
 
     $types = Type::orderBy('title')->get();
     return $types;
+
+});
+
+Route::get('/skills', function(){
+
+    $skills = Skill::orderBy('name')->get();
+    return $skills;
+
+});
+
+Route::get('/educations', function(){
+
+    $educations = Education::orderBy('degree')->get();
+    return $educations;
 
 });
 
